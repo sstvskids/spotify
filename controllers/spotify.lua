@@ -3,6 +3,18 @@ local spotify = {}
 local args = ...
 local token = args.token
 
+local cloneref = cloneref or function(obj)
+    return obj
+end
+
+local Services = setmetatable({}, {
+	__index = function(self, obj)
+		return cloneref(game:GetService(obj))
+	end
+})
+
+local HttpService = Services.HttpService
+
 local request = request or http.request or syn.request
 
 do
@@ -36,7 +48,7 @@ do
 		end)
 
 		if suc and res.StatusCode == 200 then
-			local data, artist = httpService:JSONDecode(res.Body), ''
+			local data, artist = HttpService:JSONDecode(res.Body), ''
 
 			if data and data.item then
 				for i, v in data.item.artists do
