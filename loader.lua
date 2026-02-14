@@ -8,11 +8,11 @@ elseif not getcustomasset and args.icon == true or args.icon == nil then
     args.icon = false
 end
 
-local hud = loadstring(game:HttpGet(''))({
+local hud = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/spotify/refs/heads/main/controllers/hud.lua'))({
     icon = args.icon
 })
 
-local spotify = loadstring(game:HttpGet(''))({
+local spotify = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/spotify/refs/heads/main/controllers/spotify.lua'))({
     token = args.token
 })
 
