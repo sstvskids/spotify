@@ -1,4 +1,7 @@
-local args = ...
+local args = {
+    icon = true,
+    token = 'BQD4VjwbuQbRh7vI36v2QLxTiu96i-s7sHwLMYs9tN3mRSHVaDuUyIo7HaqZs8JqcL_bjYmfP_tC8BcFqj81ZULFb9IxadJxDMiFspkwmnzSYVdYlXcmChQDGM0Bwy4NyKN8ziwx0W1MBI_kJCdfINtJGsHkMtgv4Kss8fHEuBSE1rzbyZARNtzxZAoyVEbHTXb_9jf49SFA9wf4psBxmjTZ8nLby3TPrJBVvfmBw4hJCmJkdPoOfYcv7we6WMUjjBId5wMQeiNOa_uttJ3JDU2X_a0LK3yEJ7xlyLsqD645cW6yadWwO0y7GjvEoFvhQ7x03wEr96SusNBEr3wwOz4-kGmGvq-WaV9L6Hm6jgmKAeXHjcv-8dzOFpJXytJo_e_xyjj3zAKwW6rWki5XJdBDjL4'
+}
 
 assert(args, 'Missing arguments')
 assert(args.token, 'Missing spotify token')
@@ -31,15 +34,15 @@ do
                 error('Spotify token expired: (rejoin and get a new one)')
             end
 
-            if not isfile('spotify/cache/'..res.title..'_'..res.artists..'_cover.png') then
-                writefile('spotify/cache/'..res.title..'_'..res.artists..'_cover.png', game:HttpGet(res.cover))
+            if not isfile('spotify/cache/'..track.title..'_'..track.artists..'_cover.png') then
+                writefile('spotify/cache/'..track.title..'_'..track.artists..'_cover.png', game:HttpGet(track.cover))
             end
 
-			api.song.artistnameinst.Text = res.artists
-			api.song.nameinst.Text = res.title
+			hud.song.artistnameinst.Text = track.artists
+			hud.song.nameinst.Text = track.title
 
-			if api.song.iconinst then
-				api.song.iconinst.Image = getcustomasset('spotify/cache/'..res.title..'_'..res.artists..'_cover.png')
+			if hud.song.iconinst then
+				hud.song.iconinst.Image = getcustomasset('spotify/cache/'..track.title..'_'..track.artists..'_cover.png')
 			end
         end
 
