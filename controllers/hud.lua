@@ -112,7 +112,7 @@ do
 		TContainerUILayout.VerticalAlignment = Enum.VerticalAlignment.Top
 		TContainerUILayout.Parent = TextContainer
 
-		addPadding(TextContainer, 0, icon and 10 or 15, 15, 11)
+		addPadding(TextContainer, 0, icon and 10 or 15, 15, 10)
 
 		local SongName = Instance.new('TextLabel')
 		SongName.AutomaticSize = Enum.AutomaticSize.X
