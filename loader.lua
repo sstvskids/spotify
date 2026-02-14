@@ -1,7 +1,4 @@
-local args = {
-    icon = true,
-    token = 'BQD4VjwbuQbRh7vI36v2QLxTiu96i-s7sHwLMYs9tN3mRSHVaDuUyIo7HaqZs8JqcL_bjYmfP_tC8BcFqj81ZULFb9IxadJxDMiFspkwmnzSYVdYlXcmChQDGM0Bwy4NyKN8ziwx0W1MBI_kJCdfINtJGsHkMtgv4Kss8fHEuBSE1rzbyZARNtzxZAoyVEbHTXb_9jf49SFA9wf4psBxmjTZ8nLby3TPrJBVvfmBw4hJCmJkdPoOfYcv7we6WMUjjBId5wMQeiNOa_uttJ3JDU2X_a0LK3yEJ7xlyLsqD645cW6yadWwO0y7GjvEoFvhQ7x03wEr96SusNBEr3wwOz4-kGmGvq-WaV9L6Hm6jgmKAeXHjcv-8dzOFpJXytJo_e_xyjj3zAKwW6rWki5XJdBDjL4'
-}
+local args = ...
 
 assert(args, 'Missing arguments')
 assert(args.token, 'Missing spotify token')
